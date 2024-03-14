@@ -1,15 +1,13 @@
-"use strict";
-
 import { readFileSync, readdirSync, statSync } from "fs";
 import { load } from "js-yaml";
 import { extname, join } from "path";
 
-const getYmlFiles = function (dirPath, arrayOfFiles) {
+const getYmlFiles = function (dirPath: string) {
   const files = readdirSync(dirPath);
-  arrayOfFiles = arrayOfFiles || [];
+  let arrayOfFiles = [];
   files.forEach(function (file) {
     if (statSync(join(dirPath, file)).isDirectory()) {
-      arrayOfFiles = getYmlFiles(join(dirPath, file), arrayOfFiles);
+      arrayOfFiles = getYmlFiles(join(dirPath, file));
     } else if ([".yml", ".yaml"].includes(extname(file).toLowerCase())) {
       arrayOfFiles.push(join(dirPath, file));
     }
@@ -17,10 +15,10 @@ const getYmlFiles = function (dirPath, arrayOfFiles) {
   return arrayOfFiles;
 };
 
-const loadYml = function (files) {
+const loadYml = function (files: string[]) {
   let parameters = [];
   let events = [];
-  let doc;
+  let doc: any;
   files.forEach((file) => {
     try {
       doc = load(readFileSync(file, "utf8"));
@@ -34,5 +32,6 @@ const loadYml = function (files) {
 };
 
 const ymlFiles = getYmlFiles("./");
+console.log(ymlFiles);
 const ymlData = loadYml(ymlFiles);
 console.log(JSON.stringify(ymlData, null, 2));

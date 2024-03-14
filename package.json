@@ -2,14 +2,24 @@
   "name": "dlt",
   "version": "0.0.1",
   "description": "Opinionated dataLayer specifications tool.",
-  "main": "index.js",
+  "main": "index.ts",
   "type": "module",
   "scripts": {
+    "dev": "nodemon --exec node --loader ts-node/esm ./src/index.ts",
+    "build": "tsc",
+    "start": "node built/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Florian Chabert",
   "license": "ISC",
   "dependencies": {
     "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.11.27",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
   }
 }
