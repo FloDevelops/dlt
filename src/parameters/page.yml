@@ -1,4 +1,4 @@
-arameters:
+parameters:
   - name: page.content_category
     type: string
     description: The category of the content
@@ -14,3 +14,5 @@ arameters:
     validation:
       type: enum
       values: ["en", "fr"]
+
+  # - name: page.language
