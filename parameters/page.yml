@@ -1,0 +1,16 @@
+arameters:
+  - name: page.content_category
+    type: string
+    description: The category of the content
+    example: news
+    validation:
+      type: enum
+      values: ["news", "blog", "video", "audio", "image", "other"]
+
+  - name: page.language
+    type: string
+    description: The language of the page
+    example: en
+    validation:
+      type: enum
+      values: ["en", "fr"]

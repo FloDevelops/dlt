@@ -1,0 +1,8 @@
+events:
+  - name: page_view
+    description: "A page view event"
+    screenshots:
+      - "https://example.com/screenshot1.png"
+    parameters:
+      - ref("page")
+      - ref("user.id")
