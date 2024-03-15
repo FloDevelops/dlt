@@ -1,5 +1,5 @@
 parameters:
-  - name: user.user_id
+  - name: user.id
     type: string
     description: The user id
     example: p320slxc82

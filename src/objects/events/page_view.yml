@@ -4,5 +4,5 @@ events:
     screenshots:
       - "https://example.com/screenshot1.png"
     parameters:
-      - ref("page")
-      - ref("user.id")
+      - page
+      - user.id

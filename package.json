@@ -5,7 +5,7 @@
   "main": "index.ts",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --watch 'src/**' --exec node --loader ts-node/esm ./src/index.ts",
+    "dev": "nodemon --watch 'src/**/*' --exec node --loader ts-node/esm ./src/index.ts",
     "build": "tsc",
     "start": "node built/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,13 +13,18 @@
   "author": "Florian Chabert",
   "license": "ISC",
   "dependencies": {
+    "graphlib": "^2.1.8",
     "js-yaml": "^4.1.0"
   },
   "devDependencies": {
+    "@types/graphlib": "^2.1.12",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.11.27",
     "nodemon": "^3.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.2"
+  },
+  "engines": {
+    "node": ">=21.6.2"
   }
 }

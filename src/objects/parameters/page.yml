@@ -1,4 +1,8 @@
 parameters:
+  - name: page
+    type: object
+    description: All the details about the page
+
   - name: page.content_category
     type: string
     description: The category of the content
